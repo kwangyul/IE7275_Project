@@ -1,0 +1,72 @@
+---
+title: "Seattle_Parking"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, eval = T)
+library(tidyverse)
+library(mapproj)
+library(ggmap)
+ggmap::register_google(key = "AIzaSyAboSpFXpr8Pu8SC3XGW6vigLmRce96rUQ")
+```
+
+
+```{r}
+mapdata <- ggmap(get_googlemap(center = c(lon = -122.335167, lat = 47.620013),
+                         zoom = 12, scale = 2,
+                         maptype ='terrain',
+                         color = 'color'))
+```
+
+```{r}
+url <- 'https://raw.githubusercontent.com/kwangyul/IE7275_Project/main/data/'
+
+df_2018 <- read.csv(paste0(url, 2018, '_ParkingLot.csv'))
+df_2019 <- read_csv(paste0(url, 2019, '_ParkingLot.csv'), show_col_types = FALSE)
+df_2020 <- read_csv(paste0(url, 2020, '_ParkingLot.csv'), show_col_types = FALSE)
+```
+
+```{r map2018}
+mapdata + 
+  geom_point(
+    aes(x = -long, y = lat,  color = PaidParkingArea, size = `Parking Space`), 
+    data = df_2018 %>% group_by(PaidParkingArea) %>%
+  summarise(n = n(),
+            `Parking Space` = sum(ParkingSpaceCount),
+            lat = mean(latitude),
+            long = mean(longitude), .groups='drop') , alpha=0.8) + 
+  xlab('Longitude') +
+  ylab('Latitude') +
+  theme(legend.box='vertical', legend.position="bottom")
+```
+
+
+```{r map2019}
+mapdata + 
+  geom_point(
+    aes(x = -long, y = lat,  color = PaidParkingArea, size = `Parking Space`), 
+    data = df_2019 %>% group_by(PaidParkingArea) %>%
+  summarise(n = n(),
+            `Parking Space` = sum(ParkingSpaceCount),
+            lat = mean(latitude),
+            long = mean(longitude), .groups='drop') , alpha=0.8) + 
+  xlab('Longitude') +
+  ylab('Latitude') +
+  theme(legend.box='vertical', legend.position="bottom")
+```
+
+
+```{r map2020}
+mapdata + 
+  geom_point(
+    aes(x = -long, y = lat,  color = PaidParkingArea, size = `Parking Space`), 
+    data = df_2020 %>% group_by(PaidParkingArea) %>%
+  summarise(n = n(),
+            `Parking Space` = sum(ParkingSpaceCount),
+            lat = mean(latitude),
+            long = mean(longitude), .groups='drop') , alpha=0.8) + 
+  xlab('Longitude') +
+  ylab('Latitude') +
+  theme(legend.box='vertical', legend.position="bottom")
+```
