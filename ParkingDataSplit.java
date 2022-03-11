@@ -51,8 +51,8 @@ public class ParkingDataSplit {
                 if (!parking_lot_list.contains(sourceElementKey)) {
                     List<String> point = getPoint(elements[11]);
 
-                    String longitude = cnt == 0 ? "longitude" : point.get(0);
-                    String latitude = cnt == 0 ? "latitude" : point.get(1);
+                    String longitude = cnt == 0 ? "Longitude" : point.get(0);
+                    String latitude = cnt == 0 ? "Latitude" : point.get(1);
 
                     parking_lot_list.add(sourceElementKey);
 
@@ -63,9 +63,8 @@ public class ParkingDataSplit {
 
                     bw_lot.write(lot);
                     bw_lot.newLine();
-                    bw_lot.flush();
 
-                    if (cnt != 0) {
+                    if (cnt != 0 && !outFiles.containsKey(paidParkingArea)) {
                         String outFileName = year + "_ParkingStat_" + paidParkingArea + ".csv";
                         outFileName = outFileName.replace('/', '_');
                         outFileName = outFileName.replace(" ", "");

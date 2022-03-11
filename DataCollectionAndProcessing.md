@@ -5,8 +5,8 @@
 | Data                        | Rows        | Size | Source       |
 |-----------------------------|-------------|------|--------------|
 | 2018 Paid Parking Occupancy | 289,433,487 | 40GB | [Link][2018] |
-| 2019 Paid Parking Occupancy | 286,106,445 | 40GB | [Link][2019] |
-| 2020 Paid Parking Occupancy | 153,006,452 | 22GB | [Link][2020] |
+| 2019 Paid Parking Occupancy | 286,106,444 | 40GB | [Link][2019] |
+| 2020 Paid Parking Occupancy | 153,006,451 | 22GB | [Link][2020] |
 
 
 [2018]: https://data.seattle.gov/Transportation/2018-Paid-Parking-Occupancy-Year-to-date-/6yaw-2m8q
@@ -65,18 +65,31 @@
 
 ### Table: 5. Size Comparison Before and After Processing
 
-| Data                        | Size (Before) | Size (After) |
-|-----------------------------|---------------|--------------|
-| 2018 Paid Parking Occupancy | 40GB          | 6.9GB        |
-| 2019 Paid Parking Occupancy | 40GB          | 8.2GB        |
-| 2020 Paid Parking Occupancy | 22GB          | 4.2GB        |
+| Data              | Size (Before) | Size (After) |
+|-------------------|---------------|--------------|
+| 2018 Paid Parking | 40 GB         | 10.0 GB      |
+| 2019 Paid Parking | 40 GB         |  9.8 GB      |
+| 2020 Paid Parking | 22 GB         |  5.4 GB      |
+
+
+### Table: 6. Aggregated data in 10-minutes 
+
+| Data                       | Size   | Row        |
+|----------------------------|--------|------------|
+| 2018 Paid Parking (10-Min) | 778 MB | 28,958,233 |
+| 2019 Paid Parking (10-Min) | 769 MB | 28,634,647 |
+| 2020 Paid Parking (10-Min) | 426 MB | 15,311,841 |
+
+
 
 
 ### Source Code
 
- - [Python](parking_data_split.py)
-   > At first, I programmed in Python, but it would take more than 6 days to process each data.
+ - [Data Splitor using Python](parking_data_split.py)
+   > At first, I programmed in Python, but it would take more than 6 days to process each year data.
  
- - [Java](ParkingDataSplit.java)
-   > It took between 30 and 60 minutes to process each data using Java program.
+ - [Data Splitor using Java](ParkingDataSplit.java)
+   > It took about 30 minutes to process each year data using Java program.
+
+ - [Aggregator in 10 minutes using Java](ParkingDataAggregate.java)
  
