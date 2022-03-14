@@ -16,20 +16,20 @@
 
 ### Table: 2. Attributes
 
-| No  | Column                       | Description                                                                      | Type     |
-|-----|------------------------------|----------------------------------------------------------------------------------|----------|
-| 1   | OccupancyDateTime            | The date and time (minute) of the transaction as recorded.                       | DateTime |
-| 2   | PaidOccupancy                | The numerator of the paid occupancy percentage calculation.                      | Number   |
-| 3   | BlockfaceName                | Street segment, name of street.                                                  | Text     |
-| 4   | SideOfStreet                 | Options: E, S, N, W, NE, SW, SE, NW.                                             | Text     |
-| 5   | SourceElementKey             | Unique identifier for the city street segment where the pay station is located.  | Number   |
-| 6   | ParkingTimeLimitCategory     | In minutes. For example, 120 (2-hour parking).                                   | Number   |
-| 7   | ParkingSpaceCount            | Number of paid spaces on the blockface at the given date and time.               | Number   |
-| 8   | PaidParkingArea              | Primary name of a paid parking neighborhood.                                     | Text     |
-| 9   | PaidParkingSubArea           | Subset of a paid parking area.                                                   | Text     |
-| 10  | PaidParkingRate              | Parking rate charged at date and time.                                           | Number   |
-| 11  | ParkingCategory              | An overall description of the type of parking allowed on a blockface.            | Text     |
-| 12  | Point (Latitude, Longitude)  | Location of a pay station along the same blockface.                              | Text     |
+| No  | Column                       | Description                                                                     | Type     |
+|-----|------------------------------|---------------------------------------------------------------------------------|----------|
+| 1   | OccupancyDateTime            | The date and time (minute) of the transaction as recorded.                      | DateTime |
+| 2   | PaidOccupancy                | The number of vehicles paid for parking at this time.                           | Number   |
+| 3   | BlockfaceName                | Street segment, name of street.                                                 | Text     |
+| 4   | SideOfStreet                 | Options: E, S, N, W, NE, SW, SE, NW.                                            | Text     |
+| 5   | SourceElementKey             | Unique identifier for the city street segment where the pay station is located. | Number   |
+| 6   | ParkingTimeLimitCategory     | In minutes. For example, 120 (2-hour parking).                                  | Number   |
+| 7   | ParkingSpaceCount            | The number of paid spaces on the blockface at the given date and time.          | Number   |
+| 8   | PaidParkingArea              | Primary name of a paid parking neighborhood.                                    | Text     |
+| 9   | PaidParkingSubArea           | Subset of a paid parking area.                                                  | Text     |
+| 10  | PaidParkingRate              | Parking rate charged at date and time.                                          | Number   |
+| 11  | ParkingCategory              | An overall description of the type of parking allowed on a blockface.           | Text     |
+| 12  | Point (Latitude, Longitude)  | Location of a pay station along the same blockface.                             | Text     |
 
 
 ## Data Processing
