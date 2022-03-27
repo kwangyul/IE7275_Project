@@ -52,7 +52,7 @@ with open(filePath + '/' + str(year) + '_Paid_Parking_Occupancy__Year-to-date_.c
             current_time = now.strftime("%H:%M:%S")
             print(count, "Current Time:", current_time)
 
-            # 2. save csv data -> include index... (because duplicated...)
+            # 2. save csv Data -> include index... (because duplicated...)
             df_stat.to_csv(str(year) + '_parking_stat.csv', mode='a', index=False, header=False)
             df_lot.to_csv(str(year) + '_parking_lot.csv', mode='a', index=False, header=False)
 
