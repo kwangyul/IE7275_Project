@@ -19,3 +19,6 @@
       - [2018 South Lake Union](ExploratoryDataAnalysis/ParkingStatSouthLakeUnion2018.md)
       - [2019 South Lake Union](ExploratoryDataAnalysis/ParkingStatSouthLakeUnion2019.md)
       - [2020 South Lake Union](ExploratoryDataAnalysis/ParkingStatSouthLakeUnion2020.md)
+- Model Experiment
+  - [Parking Area Classifier](ModelExperiment/ModelExperiment_ParkingAreaClassifier.ipynb)
+  - [Predict Model](ModelExperiment/ModelExperiment_PredictModel.ipynb)
